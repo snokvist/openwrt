@@ -3,8 +3,9 @@ for research purposes.
 
 --- a/db.txt
 +++ b/db.txt
-@@ -1683,13 +1683,8 @@ country SD: DFS-ETSI
-
+@@ -1777,16 +1777,10 @@
+ # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+ # SE: https://pts.se/globalassets/startpage/dokument/legala-dokument/foreskrifter/radio/beslutade_ptsfs-2018-3-undantagsforeskrifter.pdf
  country SE: DFS-ETSI
 -	(2400 - 2483.5 @ 40), (100 mW)
 -	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
@@ -19,8 +20,12 @@ for research purposes.
  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
 -	(57000 - 66000 @ 2160), (40)
 +	(57240 - 71000 @ 2160), (40)
-@@ -1885,22 +1885,10 @@ country UG: DFS-FCC
 
+ # https://www.imda.gov.sg/-/media/imda/files/regulation-licensing-and-consultations/ict-standards/telecommunication-standards/radio-comms/imdatssrd.pdf
+ # IMDA TS SRD, Issue 1 Revision 3, Sep 2023, subsequently "IMDA TS SRD"
+@@ -2031,31 +2025,11 @@
+ # frequency band, 2,483.5–2,500 MHz which is subject to strict emission limits
+ # set out in 47 CFR § 15.205. TODO: reenable and specify a safe TX power here.
  country US: DFS-FCC
 -	# S1G Channel 1-3
 -	(902 - 904 @ 2), (30)
@@ -47,10 +52,11 @@ for research purposes.
 -	# 60g band
 -	# reference: section IV-D https://docs.fcc.gov/public/attachments/FCC-16-89A1.pdf
 -	# channels 1-6 EIRP=40dBm(43dBm peak)
--	(57240 - 71000 @ 2160), (40)
 +	(902 - 904 @ 2), (40)
 +	(904 - 920 @ 16), (40)
 +	(920 - 928 @ 8), (40)
 +	(2400 - 2742 @ 80), (40)
 +	(4800 - 7125 @ 320), (40)
-+	(57240 - 71000 @ 2160), (40)
+ 	(57240 - 71000 @ 2160), (40)
+
+ country UY: DFS-FCC
