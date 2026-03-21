@@ -3,35 +3,32 @@ for research purposes.
 
 --- a/db.txt
 +++ b/db.txt
-@@ -1683,13 +1683,13 @@ country SD: DFS-ETSI
+@@ -1683,13 +1683,8 @@ country SD: DFS-ETSI
 
  country SE: DFS-ETSI
 -	(2400 - 2483.5 @ 40), (100 mW)
 -	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
 -	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
 -	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
-+	(2400 - 2483.5 @ 40), (30)
-+	(5150 - 5250 @ 80), (30), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5350 @ 80), (30), AUTO-BW, wmmrule=ETSI
-+	(5470 - 5725 @ 160), (30), wmmrule=ETSI
- 	# short range devices (ETSI EN 300 440-1)
+-	# short range devices (ETSI EN 300 440-1)
 -	(5725 - 5875 @ 80), (25 mW)
-+	(5725 - 5875 @ 80), (30)
- 	# 6 GHz band
+-	# 6 GHz band
 -	(5945 - 6425 @ 320), (23), NO-OUTDOOR, wmmrule=ETSI
-+	(5945 - 6425 @ 320), (30), wmmrule=ETSI
++	(2400 - 2742 @ 80), (40)
++	(4800 - 7125 @ 320), (40)
  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
- 	(57000 - 66000 @ 2160), (40)
-@@ -1885,22 +1885,18 @@ country UG: DFS-FCC
+-	(57000 - 66000 @ 2160), (40)
++	(57240 - 71000 @ 2160), (40)
+@@ -1885,22 +1885,10 @@ country UG: DFS-FCC
 
  country US: DFS-FCC
- 	# S1G Channel 1-3
- 	(902 - 904 @ 2), (30)
- 	# S1G Channel 5-35
- 	(904 - 920 @ 16), (30)
- 	# S1G Channel 37-51
- 	(920 - 928 @ 8), (30)
- 	(2400 - 2472 @ 40), (30)
+-	# S1G Channel 1-3
+-	(902 - 904 @ 2), (30)
+-	# S1G Channel 5-35
+-	(904 - 920 @ 16), (30)
+-	# S1G Channel 37-51
+-	(920 - 928 @ 8), (30)
+-	(2400 - 2472 @ 40), (30)
 -	# 5.15 ~ 5.25 GHz: 30 dBm for master mode, 23 dBm for clients
 -	(5150 - 5250 @ 80), (23), AUTO-BW
 -	(5250 - 5350 @ 80), (24), DFS, AUTO-BW
@@ -40,21 +37,20 @@ for research purposes.
 -	# requirements, we can extend the range by 5 MHz to make the kernel
 -	# happy and be able to use channel 144.
 -	(5470 - 5730 @ 160), (24), DFS
-+	# 5.15 ~ 5.25 GHz
-+	(5150 - 5250 @ 80), (30), AUTO-BW
-+	(5250 - 5350 @ 80), (30), AUTO-BW
-+	(5470 - 5730 @ 160), (30)
- 	(5730 - 5850 @ 80), (30), AUTO-BW
+-	(5730 - 5850 @ 80), (30), AUTO-BW
 -	# https://www.federalregister.gov/documents/2021/05/03/2021-08802/use-of-the-5850-5925-ghz-band
 -	# max. 33 dBm AP @ 20MHz, 36 dBm AP @ 40Mhz+, 6 dB less for clients
 -	(5850 - 5895 @ 40), (27), NO-OUTDOOR, AUTO-BW, NO-IR
 -	# 6g band
 -	# https://www.federalregister.gov/documents/2020/05/26/2020-11236/unlicensed-use-of-the-6ghz-band
 -	(5925 - 7125 @ 320), (12), NO-OUTDOOR, NO-IR
-+	(5850 - 5895 @ 40), (30), AUTO-BW
-+	# 6g band
-+	(5925 - 7125 @ 320), (30)
- 	# 60g band
+-	# 60g band
 -	# reference: section IV-D https://docs.fcc.gov/public/attachments/FCC-16-89A1.pdf
 -	# channels 1-6 EIRP=40dBm(43dBm peak)
- 	(57240 - 71000 @ 2160), (40)
+-	(57240 - 71000 @ 2160), (40)
++	(902 - 904 @ 2), (40)
++	(904 - 920 @ 16), (40)
++	(920 - 928 @ 8), (40)
++	(2400 - 2742 @ 80), (40)
++	(4800 - 7125 @ 320), (40)
++	(57240 - 71000 @ 2160), (40)
