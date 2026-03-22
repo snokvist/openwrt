@@ -1,0 +1,24 @@
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	list ipaddr '127.0.0.1/8'
+
+config globals 'globals'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	list ports 'eth0'
+
+config interface 'lan'
+	option device 'br-lan'
+	option proto 'static'
+	list ipaddr '192.168.2.1/24'
+
+config interface 'wwan'
+	option proto 'dhcp'
+
+config interface 'stabridge'
+	option proto 'relay'
+	list network 'lan'
+	list network 'wwan'
