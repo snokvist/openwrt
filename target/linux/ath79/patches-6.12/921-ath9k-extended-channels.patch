@@ -1,0 +1,57 @@
+ath9k: add extended 5GHz channels and raise default max_power
+
+Add channels 144, 169, 173, 177, 181 (5720-5905 MHz) to the
+5GHz channel table. Raise default max_power from 20 to 30 dBm.
+Update ATH9K_NUM_CHANNELS to match new channel count.
+
+The ar9344 synthesizer can tune to these frequencies. Actual
+usability depends on regulatory domain and EEPROM calibration.
+
+For research purposes only.
+
+--- a/drivers/net/wireless/ath/ath9k/common-init.c
++++ b/drivers/net/wireless/ath/ath9k/common-init.c
+@@ -29,7 +29,7 @@
+ 	.band = NL80211_BAND_5GHZ, \
+ 	.center_freq = (_freq), \
+ 	.hw_value = (_idx), \
+-	.max_power = 20, \
++	.max_power = 30, \
+ }
+
+ /* Some 2 GHz radios are actually tunable on 2312-2732
+@@ -80,12 +80,18 @@
+ 	CHAN5G(5660, 30), /* Channel 132 */
+ 	CHAN5G(5680, 31), /* Channel 136 */
+ 	CHAN5G(5700, 32), /* Channel 140 */
++	CHAN5G(5720, 33), /* Channel 144 */
+ 	/* _We_ call this UNII 3 */
+-	CHAN5G(5745, 33), /* Channel 149 */
+-	CHAN5G(5765, 34), /* Channel 153 */
+-	CHAN5G(5785, 35), /* Channel 157 */
+-	CHAN5G(5805, 36), /* Channel 161 */
+-	CHAN5G(5825, 37), /* Channel 165 */
++	CHAN5G(5745, 34), /* Channel 149 */
++	CHAN5G(5765, 35), /* Channel 153 */
++	CHAN5G(5785, 36), /* Channel 157 */
++	CHAN5G(5805, 37), /* Channel 161 */
++	CHAN5G(5825, 38), /* Channel 165 */
++	/* Extended UNII 3+ / UNII 4 - research */
++	CHAN5G(5845, 39), /* Channel 169 */
++	CHAN5G(5865, 40), /* Channel 173 */
++	CHAN5G(5885, 41), /* Channel 177 */
++	CHAN5G(5905, 42), /* Channel 181 */
+ };
+
+ /* Atheros hardware rate code addition for short preamble */
+--- a/drivers/net/wireless/ath/ath9k/hw.h
++++ b/drivers/net/wireless/ath/ath9k/hw.h
+@@ -73,7 +73,7 @@
+
+ #define ATH9K_RSSI_BAD			-128
+
+-#define ATH9K_NUM_CHANNELS	38
++#define ATH9K_NUM_CHANNELS	43
+
+ /* Register read/write primitives */
+ #define REG_WRITE(_ah, _reg, _val) \
