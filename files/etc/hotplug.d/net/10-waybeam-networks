@@ -23,6 +23,17 @@ network={
 EOF
 done
 
+# OpenIPC default network
+cat >> "$CONF" << EOF
+network={
+	ssid="OpenIPC"
+	scan_ssid=1
+	key_mgmt=WPA-PSK
+	psk="12345678"
+	proto=RSN
+}
+EOF
+
 # Also add open network variants (in case APs have no encryption)
 for i in 01 02 03 04 05 06 07 08; do
     cat >> "$CONF" << EOF
