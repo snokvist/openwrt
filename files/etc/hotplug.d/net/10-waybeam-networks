@@ -1,5 +1,5 @@
 #!/bin/sh
-# Append waybeam-01 through waybeam-08 to wpa_supplicant config
+# Append waybeam-02 through waybeam-08 to wpa_supplicant config
 # Triggered when phy0-sta0 interface appears
 
 [ "$ACTION" = "add" ] || exit 0
@@ -9,9 +9,9 @@ CONF="/tmp/run/wpa-supplicant-phy0-sta0.conf"
 [ -f "$CONF" ] || exit 0
 
 # Only add once (check if already appended)
-grep -q "waybeam-01" "$CONF" && exit 0
+grep -q "waybeam-02" "$CONF" && exit 0
 
-for i in 01 02 03 04 05 06 07 08; do
+for i in 02 03 04 05 06 07 08; do
     cat >> "$CONF" << EOF
 network={
 	ssid="waybeam-${i}"
